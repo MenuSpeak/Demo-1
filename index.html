@@ -208,15 +208,41 @@ img{max-width:100%;display:block}
 .search-wrapper button{background:var(--navy);color:var(--cream);font-weight:600;padding:.8rem 2rem;border-radius:60px;font-size:.95rem;transition:all .25s var(--smooth);white-space:nowrap;border:none}
 .search-wrapper button:hover{background:var(--saffron);color:var(--navy);transform:scale(1.02)}
 .search-wrapper button:active{transform:scale(.96)}
-.categories{display:flex;gap:.75rem;overflow-x:auto;padding:.5rem .2rem .8rem;scrollbar-width:thin;scrollbar-color:var(--saffron) var(--cream-dim);-webkit-overflow-scrolling:touch;justify-content:center;flex-wrap:wrap}
-.categories::-webkit-scrollbar{height:5px}
-.categories::-webkit-scrollbar-track{background:var(--cream-dim);border-radius:10px}
-.categories::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:10px}
-.cat-btn{background:#fff;border:2px solid rgba(11,27,43,.08);color:var(--navy);padding:.65rem 1.5rem;border-radius:50px;font-size:.9rem;font-weight:600;white-space:nowrap;transition:all .25s var(--bounce);display:flex;align-items:center;gap:.45rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+
+/* ============ CATEGORY BUTTONS — 2nd website style (wrap) ============ */
+.categories{
+  display:flex;
+  gap:.75rem;
+  padding:.5rem .2rem .8rem;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.cat-btn{
+  background:#fff;
+  border:2px solid rgba(11,27,43,.08);
+  color:var(--navy);
+  padding:.65rem 1.5rem;
+  border-radius:50px;
+  font-size:.9rem;
+  font-weight:600;
+  white-space:nowrap;
+  transition:all .25s var(--bounce);
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+  box-shadow:var(--shadow-sm);
+  position:relative;
+  overflow:hidden;
+}
 .cat-btn i{font-size:.85rem;color:var(--saffron);transition:color .2s,transform .3s var(--bounce)}
 .cat-btn:hover{border-color:var(--saffron);transform:translateY(-2px);box-shadow:var(--shadow-md)}
 .cat-btn:hover i{transform:rotate(-10deg) scale(1.15)}
-.cat-btn.active{background:var(--navy);border-color:var(--navy);color:var(--cream);box-shadow:0 6px 20px rgba(11,27,43,.3)}
+.cat-btn.active{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:var(--cream);
+  box-shadow:0 6px 20px rgba(11,27,43,.3);
+}
 .cat-btn.active i{color:var(--saffron);transform:scale(1.1)}
 
 /* ============ MENU ============ */
@@ -228,9 +254,17 @@ img{max-width:100%;display:block}
 .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.75rem;margin:1.5rem 0 2.5rem}
 .menu-card{background:#fff;border-radius:var(--r-md);overflow:hidden;transition:transform .3s var(--bounce),box-shadow .3s var(--smooth);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;border:1px solid rgba(11,27,43,.06);position:relative}
 .menu-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
-.card-img-wrapper{position:relative;overflow:hidden;height:200px;background:var(--cream-dim)}
+
+/* ✅ SQUARE IMAGE — 2nd website style */
+.card-img-wrapper{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:1/1;
+  background:var(--cream-dim);
+}
 .card-img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--smooth)}
 .menu-card:hover .card-img{transform:scale(1.08)}
+
 .price-badge{position:absolute;top:1rem;right:1rem;background:var(--saffron);color:var(--navy);font-family:'Bricolage Grotesque','Poppins',sans-serif;font-weight:800;font-size:1.15rem;padding:.4rem 1rem;border-radius:50px;box-shadow:0 4px 14px rgba(255,153,51,.5);letter-spacing:-.02em;z-index:2}
 .cat-tag{position:absolute;top:1rem;left:1rem;background:var(--chilli);color:#fff;font-size:.7rem;font-weight:600;padding:.3rem .9rem;border-radius:40px;text-transform:uppercase;letter-spacing:.04em;z-index:2}
 .card-content{padding:1.3rem 1.3rem 1.4rem;display:flex;flex-direction:column;flex:1}
@@ -346,7 +380,6 @@ img{max-width:100%;display:block}
   @keyframes orbit2{from{transform:rotate(0deg) translateX(115px) rotate(0deg)}to{transform:rotate(360deg) translateX(115px) rotate(-360deg)}}
   @keyframes orbit3{from{transform:rotate(0deg) translateX(60px) rotate(0deg)}to{transform:rotate(360deg) translateX(60px) rotate(-360deg)}}
   .menu-grid{grid-template-columns:1fr;gap:1.25rem}
-  .card-img-wrapper{height:180px}
   .section-title{font-size:1.6rem}
   .sticky-cart{bottom:1rem;right:1rem;padding:.7rem 1.3rem;font-size:.85rem;gap:.6rem}
   .sticky-cart i{font-size:1.1rem}
@@ -359,7 +392,7 @@ img{max-width:100%;display:block}
   .cart-item-title{font-size:.92rem}
   .cart-item-qty button{width:28px;height:28px;font-size:1rem}
   .delivery-toggle button{font-size:.8rem;padding:.65rem}
-  .categories{justify-content:flex-start;flex-wrap:nowrap;padding-bottom:1rem}
+  .categories{justify-content:flex-start;flex-wrap:wrap;padding-bottom:1rem}
   .toast{bottom:4.5rem;right:1rem;left:1rem;max-width:none;font-size:.85rem}
 }
 @media (max-width:480px){
@@ -480,7 +513,7 @@ img{max-width:100%;display:block}
       <span id="cartTotal">₹0</span>
     </div>
 
-    <!-- ORDER TYPE -->
+    <!-- ORDER TYPE — Takeaway FIRST, Delivery second -->
     <div class="checkout-section">
       <h4><i class="fas fa-motorcycle" style="color:var(--chilli);margin-right:.4rem;"></i> Order type</h4>
       <div class="delivery-toggle" id="deliveryToggle">
@@ -489,8 +522,16 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-    <!-- DELIVERY FIELDS (name, phone, address) -->
-    <div class="checkout-section" id="deliveryFields">
+    <!-- TAKEAWAY FIELDS (only table number) — visible by default -->
+    <div class="checkout-section" id="takeawayFields">
+      <h4><i class="fas fa-chair" style="color:var(--chilli);margin-right:.4rem;"></i> Table Number</h4>
+      <div class="single-field">
+        <input type="text" id="tableNumber" placeholder="e.g. 12" style="background:var(--cream);">
+      </div>
+    </div>
+
+    <!-- DELIVERY FIELDS (name, phone, address) — hidden by default -->
+    <div class="checkout-section" id="deliveryFields" style="display:none;">
       <h4><i class="fas fa-user" style="color:var(--chilli);margin-right:.4rem;"></i> Your Details</h4>
       <div class="checkout-fields">
         <input type="text" id="customerName" placeholder="Full name" autocomplete="name">
@@ -499,16 +540,6 @@ img{max-width:100%;display:block}
       </div>
     </div>
 
-
-    <!-- TAKEAWAY FIELDS (only table number) -->
-    <div class="checkout-section" id="takeawayFields" style="display:none;">
-      <h4><i class="fas fa-chair" style="color:var(--chilli);margin-right:.4rem;"></i> Table Number</h4>
-      <div class="single-field">
-        <input type="text" id="tableNumber" placeholder="e.g. 12" style="background:var(--cream);">
-      </div>
-    </div>
-
-    
     <button class="whatsapp-btn" id="whatsappBtn">
       <i class="fab fa-whatsapp"></i> Place order on WhatsApp
     </button>
@@ -527,12 +558,9 @@ img{max-width:100%;display:block}
   'use strict';
 
   /* ============ CONFIG ============ */
-  const WHATSAPP_NUMBER = '919284969878'; // ✅ Updated WhatsApp number
+  const WHATSAPP_NUMBER = '919284969878';
 
   /* ============ MENU DATA ============ */
-  /* 🖼️  IMAGE PATHS: apni images ko "img" folder me daalein.
-         Example: img/plain-dosa.jpg → path: 'img/plain-dosa.jpg'
-         Format: JPG/PNG/WEBP — jo bhi ho, path wahi likhein. */
   const menuItems = [
     { id:'d1', name:'Plain Dosa',    marathi:'साधा डोसा',        price:80,  category:'dosa',      desc:'Crispy golden dosa with chutney & sambar',         img:'img/plain_dosa.jpg' },
     { id:'d2', name:'Masala Dosa',   marathi:'मसाला डोसा',       price:110, category:'dosa',      desc:'Spiced potato filling, classic favourite',         img:'img/masala_dosa.jpg' },
@@ -556,7 +584,7 @@ img{max-width:100%;display:block}
   try { cart = JSON.parse(localStorage.getItem('appaDosaCart')) || {}; } catch(e){ cart = {}; }
   let activeCategory = 'all';
   let searchQuery = '';
-  let orderType = 'delivery';
+  let orderType = 'takeaway';   // ✅ Takeaway default
 
   /* ============ DOM ============ */
   const $ = id => document.getElementById(id);
@@ -763,7 +791,7 @@ img{max-width:100%;display:block}
   closeCartBtn.addEventListener('click', closeCartPanel);
   cartOverlay.addEventListener('click', closeCartPanel);
 
-  /* ============ ORDER TYPE TOGGLE (single visible input group) ============ */
+  /* ============ ORDER TYPE TOGGLE ============ */
   function updateOrderFields(){
     if (orderType === 'takeaway'){
       takeawayFields.style.display = 'block';
@@ -793,7 +821,6 @@ img{max-width:100%;display:block}
     const phone = customerPhone.value.trim();
     const address = customerAddress.value.trim();
 
-    // Validation based on order type
     if (orderType === 'takeaway'){
       if (!table){ showToast('Please enter table number', 'fa-exclamation-circle'); tableNumber.focus(); return; }
     } else {
